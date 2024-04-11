@@ -1,12 +1,12 @@
 	
 
-#include "colors.inc"
-#include "shapes.inc"
+#include "include/colors.inc"
+#include "include/shapes.inc"
 
-#include "woods.inc"
-#include "metals.inc"
-#include "stones.inc"
-#include "textures.inc"
+// #include "include/woods.inc"
+// #include "include/metals.inc"
+// #include "include/stones.inc"
+#include "include/textures.inc"
 
 
 
@@ -21,6 +21,7 @@
 //		 //[ 0.3 color rgb<0.3,0.4,1.2>]
 //		 [0.3 color rgb<1, 0.5, 0.3>]
 //                [ 1.2 White ]
+
 //
 //              }
 //
@@ -85,12 +86,7 @@ camera {
           }
 
 light_source {<0.8, 6, 1.2> color White }
-light_source {<0.6, 0.3, -0.8> color White spotlight
-looks_like{
-              sphere {<0,0,0>,0.2 
-                      texture {finish {ambient 1} pigment{rgb 1}}
-              } 
-            }}
+light_source {<0.6, 0.3, -0.8> color White spotlight}
 
 //light_source {<2, 0.5, -0.8> color 0.6*White}
 
@@ -112,7 +108,7 @@ object{
 texture {
   pigment { 
     image_map {
-      jpeg "bure.jpeg" 
+      jpeg "background.jpeg" 
       once
     }
   }
@@ -291,95 +287,95 @@ union {
 
 
 
-#declare Num = 10;
-#for (N, 0, Num)
-object {WI translate <(-N*N/5000)+0.30, N*N/50000+0.5 , N*N/50000+0.6>  scale 0.8
-       texture { 
-     pigment {
-     	  color rgbt <0.65, 0.50, 0.25, N/Num>}
-        finish{
-    	     metallic 
+// #declare Num = 10;
+// #for (N, 0, Num)
+// object {WI translate <(-N*N/5000)+0.30, N*N/50000+0.5 , N*N/50000+0.6>  scale 0.8
+//        texture { 
+//      pigment {
+//      	  color rgbt <0.65, 0.50, 0.25, N/Num>}
+//         finish{
+//     	     metallic 
     	 
-    	     reflection 0.5
+//     	     reflection 0.5
     	 
-    	      roughness 0.0
+//     	      roughness 0.0
     	 
-    	       phong 0.8
+//     	       phong 0.8
     	 
-    	       specular 0.8
+//     	       specular 0.8
     
-//       	 ambient 0.35
-            brilliance 1.5
-          diffuse 0.3
-          crand 0.2
-     }
-   }
-}
-#end
+// //       	 ambient 0.35
+//             brilliance 1.5
+//           diffuse 0.3
+//           crand 0.2
+//      }
+//    }
+// }
+// #end
 
-object {Bullet translate<0.36, 0.5, 0.6>  scale 0.8 texture { 
-//    	 pigment{ rgb <0.72, 0.45, 0.20>}
-     pigment {color rgb <0.65, 0.50, 0.25>}
-    finish{
-    	 metallic 
+// object {Bullet translate<0.36, 0.5, 0.6>  scale 0.8 texture { 
+// //    	 pigment{ rgb <0.72, 0.45, 0.20>}
+//      pigment {color rgb <0.65, 0.50, 0.25>}
+//     finish{
+//     	 metallic 
     	 
-    	 reflection 0.4
+//     	 reflection 0.4
     	 
-    	 roughness 0.0
+//     	 roughness 0.0
     	 
-    	 phong 0.8
+//     	 phong 0.8
     	 
-    	 specular 0.8
+//     	 specular 0.8
 
-    }
-    }
+//     }
+//     }
   
-}
+// }
 
-#declare Num = 10;
-#for (N, 0, Num)
-object {WI translate <(-N*N/5000)-0.4, N*N/50000+0.1 , N*N/50000+0.3> 
-       texture { 
-     pigment {
-     	  color rgbt <0.65, 0.50, 0.25, N/Num>}
-        finish{
-    	     metallic 
+// #declare Num = 10;
+// #for (N, 0, Num)
+// object {WI translate <(-N*N/5000)-0.4, N*N/50000+0.1 , N*N/50000+0.3> 
+//        texture { 
+//      pigment {
+//      	  color rgbt <0.65, 0.50, 0.25, N/Num>}
+//         finish{
+//     	     metallic 
     	 
-    	     reflection 0.5
+//     	     reflection 0.5
     	 
-    	      roughness 0.0
+//     	      roughness 0.0
     	 
-    	       phong 0.8
+//     	       phong 0.8
     	 
-    	       specular 0.8
+//     	       specular 0.8
     
-//       	 ambient 0.35
-            brilliance 1.5
-          diffuse 0.3
-          crand 0.2
-     }
-   }
-}
-#end
+// //       	 ambient 0.35
+//             brilliance 1.5
+//           diffuse 0.3
+//           crand 0.2
+//      }
+//    }
+// }
+// #end
 
-object {Bullet translate<-0.4, 0.1, 0.3>  texture { 
-//    	 pigment{ rgb <0.72, 0.45, 0.20>}
-     pigment {color rgb <0.65, 0.50, 0.25>}
-    finish{
-    	 metallic 
+// object {Bullet translate<-0.4, 0.1, 0.3>  texture { 
+// //    	 pigment{ rgb <0.72, 0.45, 0.20>}
+//      pigment {color rgb <0.65, 0.50, 0.25>}
+//     finish{
+//     	 metallic 
     	 
-    	 reflection 0.4
+//     	 reflection 0.4
     	 
-    	 roughness 0.0
+//     	 roughness 0.0
     	 
-    	 phong 0.8
+//     	 phong 0.8
     	 
-    	 specular 0.8
+//     	 specular 0.8
 
-    }
-    }
+//     }
+//     }
   
-}
+// }
 
 object {Bullet translate<0, 0, 0>  texture { 
 //    	 pigment{ rgb <0.72, 0.45, 0.20>}
