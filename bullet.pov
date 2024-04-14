@@ -24,13 +24,10 @@ sky_sphere {
     }
 }
 
-          fog{
-
-            color White
-
-            distance 0.2
-
-          }
+fog{
+	color White
+	distance 0.2
+}
 
 // 反射用に床を定義
 object{
@@ -185,7 +182,7 @@ object{
         #for (N, 0, num)
         object {
             Body(rgbt <R, G, B, N/num>)
-            translate <(-N*N/3500)+dx, N*N/25000+dy , N*N/50000+dz>
+            translate <(-N*N/2500)+dx, N*N/25000+dy , N*N/50000+dz>
             scale Scale
         }
         #end
@@ -198,6 +195,6 @@ union {
         translate<0.33, 0.5, 0.6>
         scale 0.8
     }
-    object {Moving_Body(0.3, 0.5, 0.6, 0.8, 10, 0.65, 0.50, 0.25)}
+    object {Moving_Body(0.3, 0.5, 0.6, 0.8, 15, 0.65, 0.50, 0.25)}
 }
 object {Bullet(rgbt <0.65, 0.50, 0.25, 0.1>)}
